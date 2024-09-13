@@ -1,0 +1,85 @@
+/* General styling for the game */
+.game-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+/* Title styling */
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Styling for input field */
+input[type="number"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit button styling */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Message styling */
+.message {
+  font-size: 18px;
+  margin: 20px 0;
+  color: #666;
+}
+
+/* Attempt count and high score */
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Play Again button styling */
+.play-again-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.play-again-btn:hover {
+  background-color: #0b7dda;
+}
+
+/* Confetti animation section */
+.confetti-container {
+  position: relative;
+}
+
+.confetti {
+  display: inline-block;
+}

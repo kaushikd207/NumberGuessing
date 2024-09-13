@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+// /App.js
+import React, { useState, useEffect } from "react";
+import Auth from "./components/Auth";
+import Game from "./components/Game";
+import Scoreboard from "./components/Scoreboard";
+import { auth } from "../src/components/firebase";
+import { signOut } from "firebase/auth";
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState(null);
+
+  // Persist user authentication state across sessions
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // Function to log the user out
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      setUser(null);
+      alert("Logged out successfully!");
+    } catch (error) {
+      console.error("Error logging out: ", error);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {user ? (
+        <>
+          <div
+            className="nav"
+            style={{
+              background: "#2196f3",
+              height: "60px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "end",
+              paddingRight: "20px",
+            }}
+          >
+            {" "}
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+
+          <Game />
+          <Scoreboard user={user} />
+        </>
+      ) : (
+        <Auth setUser={setUser} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
