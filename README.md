@@ -1,3 +1,12 @@
+This is a number-guessing Game that is built using Reactjs, firebase and confetti animation
+
+
+
+
+https://github.com/user-attachments/assets/f410d3ef-0001-48c2-99d0-f0f2aa7bcc6c
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
