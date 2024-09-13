@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Firebase configuration (replace with your Firebase project config)
 const firebaseConfig = {
     apiKey: "AIzaSyBOErIuBe5SqgztK0FT3Cjp7YAavxwOl_A",
     authDomain: "game-781df.firebaseapp.com",

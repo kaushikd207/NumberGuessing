@@ -1,4 +1,4 @@
-// /components/Scoreboard.js
+
 import React, { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { collection, getDocs } from "firebase/firestore";

@@ -1,9 +1,9 @@
-// /components/Game.js
+
 import React, { useState, useEffect } from 'react';
 import { db, auth } from './firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import Confetti from 'react-confetti';
-import './Game.css'; // Import the CSS file for styling
+import './Game.css';
 
 const Game = () => {
   const [targetNumber, setTargetNumber] = useState(generateRandomNumber());
